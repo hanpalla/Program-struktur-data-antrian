@@ -2,16 +2,14 @@
 #include <conio.h>
 #include <stdlib.h>
 
-struct bank
-{
+struct bank{
     char nama[30];
     char kode[20];
     char keperluan[20];
     char nominal[20];
 };  
 
-int main ()
-{
+int main (){
     struct bank data[10];
     int pil, i, head=0, tail=0, isi=0;
     char pil2;
@@ -27,16 +25,13 @@ int main ()
     printf("Pilihan Anda\t: ");
     scanf("%d",&pil);
     
-    switch(pil)
-    {
+    switch(pil){
         case 1:
-            if(isi == 10)
-            {
+            if(isi == 10){
                 system("cls");
                 puts("Maaf, antrean sudah penuh.");
             }
-            else
-            {
+            else{
                 input:
                 system("cls");
                 fflush(stdin);
@@ -55,12 +50,9 @@ int main ()
         break;
 
         case 2:
-            if (isi == 0 || head == tail)
-            {
+            if (isi == 0 || head == tail){
                 puts("Maaf, tidak ada antrean saat ini");
-            }
-            else
-            {
+            else{
                 puts("Penghapusan antrean pertama berhasil");
                 isi--;
                 head++;
@@ -69,14 +61,10 @@ int main ()
 
         case 3:
             if(head == tail || head > tail)
-            {
                 puts("Maaf, tidak ada antrean yang bisa ditampilkan");
-            }
-            else
-            {
+            else{
                 puts("Data Antrean.\n");
-                for(i=head; i<tail; i++)
-                {
+                for(i=head; i<tail; i++){
                     printf("Nama\t\t: %s\n",data[i].nama);
                     printf("Kode\t\t: %s\n",data[i].kode);
                     printf("Keperluan\t: %s\n",data[i].keperluan);
@@ -93,12 +81,10 @@ int main ()
         break;
 
         default:
-        {
             puts("Maaf hanya ada 4 pilihan, silahkan simak pilihan yang tersedia dengan baik");
             system("pause");
             system("cls");
             goto awal;
-        }
     }
 
     system("pause");
@@ -109,11 +95,8 @@ int main ()
     scanf("%d",&pil2);
 
     if(pil2 == 1)
-    {
         goto awal;
-    }
-    else
-    {
+    else{
         puts("Terima Kasih");
         system("pause");
         goto selesai;
